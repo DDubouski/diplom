@@ -4,14 +4,14 @@
 properties([disableConcurrentBuilds()])
 
 pipeline {
-    agent { 
-        label 'master'
-        }
+//    agent { 
+//        label 'master'
+//        }
     triggers { pollSCM('* * * * *') }
 // Храним последних 10 билдов и их артефакты
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-        timestamps()
+        timestamps() //временные отметки
     }
     stages {
         stage("docker login") {
