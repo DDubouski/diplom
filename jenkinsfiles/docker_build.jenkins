@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/helloworld') {
-                	sh 'docker build -t ddubouski/hello-world:latest . '
+                	sh 'yes | sudo docker build -t ddubouski/hello-world:latest . '
                 }
             }
         }
