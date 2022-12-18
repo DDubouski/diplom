@@ -8,9 +8,9 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install app dependencies
-RUN apt-get install -y wget
+RUN apt install -y wget
 RUN curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-RUN apt-get install -y nodejs
+RUN apt install -y nodejs
 RUN apt install -y npm
 COPY package.json ./
 COPY package-lock.json ./
