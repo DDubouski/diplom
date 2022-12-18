@@ -4,4 +4,4 @@
 sed -i.bak 's/HOSTNAME/'"$HOSTNAME"'/g' /www/data/index.html
 
 # Startup the cmd
-exec "$@"
+# exec "$@"

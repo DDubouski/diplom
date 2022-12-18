@@ -22,5 +22,13 @@ pipeline {
                 }
             }
         }
+        stage("run docker image") {
+            steps {
+                echo " ============== start building image =================="
+                dir ('docker/helloworld') {
+                	sh 'yes | sudo docker run -p 80:80/tcp "ddubouski/hello-world:latest"'
+                }
+            }
+        }        
         }
     }
