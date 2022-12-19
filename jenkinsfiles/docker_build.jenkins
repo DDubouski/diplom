@@ -22,7 +22,7 @@ pipeline {
                 echo " ============== remove containers =================="
                 dir('docker/helloworld'){
                     sh 'chmod +x dockerstop.sh'
-                    sh './dockerstop.sh'
+                    sh 'sudo ./dockerstop.sh'
                                         }
                  }
             }
