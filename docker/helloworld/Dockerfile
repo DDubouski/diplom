@@ -6,9 +6,6 @@ FROM ubuntu
 # Update the repository
 RUN apt-get update
 
-# sudo for Jenkins
-RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
 # Install necessary tools
 RUN apt-get install -y vim wget dialog net-tools
 
