@@ -7,6 +7,9 @@ pipeline {
     agent { 
         label 'master'
         }
+        environment {
+        DOCKER_PS = sh (script:'sudo docker ps -aq')
+        }
     triggers { pollSCM('* * * * *') }
 // Храним последних 10 билдов и их артефакты
     options {
@@ -22,8 +25,8 @@ pipeline {
                     }  
                     else {
                         echo 'Start release of the port'
-                        sh "sudo sudo docker stop "$(sudo docker ps -aq)""  
-                        sh "sudo docker rm "$(sudo docker ps -aq)""
+                        sh "sudo sudo docker stop ${DOCKER_PS}"
+                        sh "sudo docker rm ${DOCKER_PS}"
                     }
                     }
             }
