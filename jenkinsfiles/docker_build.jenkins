@@ -22,8 +22,8 @@ pipeline {
                     }  
                     else {
                         echo 'Start release of the port'
-                        sh "sudo sudo docker stop $(sudo docker ps -aq)"  
-                        sh "sudo docker rm $(sudo docker ps -aq)"
+                        sh "sudo sudo docker stop "$(sudo docker ps -aq)""  
+                        sh "sudo docker rm "$(sudo docker ps -aq)""
                     }
                     }
             }
