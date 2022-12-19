@@ -8,7 +8,7 @@ pipeline {
         label 'master'
         }
         environment {
-        DOCKER_PS = sh (script:'sudo docker ps -aq')
+        DOCKER_PS = ddubouski/hello-world:latest
         }
     triggers { pollSCM('* * * * *') }
 // Храним последних 10 билдов и их артефакты
@@ -22,7 +22,6 @@ pipeline {
                 script {
                     if (env.HUDSON_URL.contains('80')) {
                         echo 'all right'
-                        sh "sudo docker stop ${DOCKER_PS}"
                     }  
                     else {
                         echo 'Start release of the port'
