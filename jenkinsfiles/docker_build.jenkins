@@ -14,6 +14,14 @@ pipeline {
         timestamps() //временные отметки
     }
     stages {
+                stage("stop docker containers") {
+            steps {
+                echo " ============== start building image =================="
+                {
+                	sh 'sudo docker stop $(sudo docker ps -aq)'
+                }
+            }
+        }
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
