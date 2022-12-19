@@ -7,9 +7,9 @@ pipeline {
     agent { 
         label 'master'
         }
-        environment {
-        DOCKER_PS = ddubouski/hello-world:latest
-        }
+//        environment {
+//        DOCKER_PS = ddubouski/hello-world:latest
+//        }
     triggers { pollSCM('* * * * *') }
 // Храним последних 10 билдов и их артефакты
     options {
