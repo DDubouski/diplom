@@ -23,7 +23,9 @@ pipeline {
                 dir('docker/helloworld'){
                     sh 'chmod +x dockerstop.sh'
                     sh './dockerstop.sh'
-         }
+                                        }
+                 }
+            }
 //        stage('Docker check test') {
 //            steps {
 //                script {
@@ -55,5 +57,3 @@ pipeline {
             }
         }        
         }
-    }
-}
