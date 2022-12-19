@@ -14,12 +14,18 @@ pipeline {
         timestamps() //временные отметки
     }
     stages {
-                stage("stop docker containers") {
+        stage('Docker check test') {
             steps {
-                echo " ============== start building image =================="
-                {
-                	sh 'sudo docker stop $(sudo docker ps -aq)'
-                }
+                script {
+                    if (env.HUDSON_URL.contains('80')) {
+                        echo 'all right'
+                    }  
+                    else {
+                        echo 'Start release of the port'
+                        sh "sudo sudo docker stop $(sudo docker ps -aq)"  
+                        sh "sudo docker rm $(sudo docker ps -aq)"
+                    }
+                    }
             }
         }
         stage("create docker image") {
