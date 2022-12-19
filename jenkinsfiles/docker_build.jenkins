@@ -22,11 +22,11 @@ pipeline {
                 script {
                     if (env.HUDSON_URL.contains('80')) {
                         echo 'all right'
-                        sh "sudo sudo docker stop ${DOCKER_PS}"
+                        sh "sudo docker stop ${DOCKER_PS}"
                     }  
                     else {
                         echo 'Start release of the port'
-                        sh "sudo sudo docker stop ${DOCKER_PS}"
+                        sh "sudo docker stop ${DOCKER_PS}"
                         sh "sudo docker rm ${DOCKER_PS}"
                     }
                     }
