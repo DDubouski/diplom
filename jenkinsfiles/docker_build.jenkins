@@ -62,15 +62,6 @@ pipeline {
                 echo " ============== start testing =================="
                 }
             }
-        stage ("test status active") {
-            steps {
-                echo " ============== testing nginx =================="
-                dir('docker/helloworld'){
-                    sh 'chmod +x test1.sh'
-                    sh './test1.sh'
-                                        }
-                 }
-            }
 
         } 
         }

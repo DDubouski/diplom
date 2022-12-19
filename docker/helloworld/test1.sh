@@ -4,7 +4,7 @@
 	if [[ "$ret" != "active" ]] 
 then 
 {
-	service squid nginx
+	echo "EXIT. Something wrong!"
 	exit 1
 }
 else 
