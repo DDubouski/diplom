@@ -17,15 +17,15 @@ pipeline {
         timestamps() //временные отметки
     }
     stages {
-//        stage ("Stop docker") {
-//            steps {
-//                echo " ============== remove containers =================="
-//                dir('docker/helloworld'){
-//                    sh 'chmod +x dockerstop.sh'
-//                    sh 'sudo ./dockerstop.sh'
-//                                        }
-//                 }
-//            }
+        stage ("Stop docker") {
+            steps {
+                echo " ============== remove containers =================="
+                dir('docker/helloworld'){
+                    sh 'chmod +x dockerstop.sh'
+                    sh 'sudo ./dockerstop.sh'
+                                        }
+                 }
+            }
     
 //        stage('Docker check test') {
 //            steps {
