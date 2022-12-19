@@ -17,7 +17,7 @@ pipeline {
         timestamps() //временные отметки
     }
     stages {
-        stage 'Stop docker'
+        stage ("Stop docker") {
             steps {
                 echo " ============== remove containers =================="
                 dir('docker/helloworld'){
@@ -26,6 +26,7 @@ pipeline {
                                         }
                  }
             }
+    
 //        stage('Docker check test') {
 //            steps {
 //                script {
@@ -57,3 +58,4 @@ pipeline {
             }
         }        
         }
+}
