@@ -24,7 +24,7 @@ pipeline {
         }
         stage("run docker image") {
             steps {
-                echo " ============== start building image =================="
+                echo " ============== start running image =================="
                 dir ('docker/helloworld') {
                 	sh 'yes | sudo docker run -d -p 80:80/tcp "ddubouski/hello-world:latest"'
                 }
