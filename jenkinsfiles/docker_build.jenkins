@@ -32,15 +32,6 @@ pipeline {
                 }
             }
         }
-        stage("docker push") {
-            steps {
-                echo " ============== start pushing image =================="
-                sh '''
-                yes | sudo docker tag ddubouski/hello-world:latest ddubouski/hello-world:latest
-                yes | sudo docker push ddubouski/hello-world:latest
-                '''
-            }
-        }
     
         stage("run docker image") {
             steps {
