@@ -46,7 +46,7 @@ pipeline {
                 }
             }
         }        
-                stage("test") {
+                stage("tests") {
             when { expression { env.BRANCH_NAME == "prod" || env.BRANCH_NAME == "main" } }
             steps {
                 echo " ============== start testing =================="
