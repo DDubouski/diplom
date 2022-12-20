@@ -16,6 +16,7 @@ pipeline {
     }
     stages {
         stage ("Stop docker") {
+           when { expression { env.BRANCH_NAME == "master" } }
             steps {
                 echo " ============== remove containers =================="
                 dir('docker/helloworld'){
@@ -24,7 +25,10 @@ pipeline {
                                         }
                  }
             }
+
+
         stage("building docker image") {
+            when { expression { env.BRANCH_NAME == "dev" || env.BRANCH_NAME == "master" } }
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/helloworld') {
@@ -34,6 +38,7 @@ pipeline {
         }
     
         stage("run docker image") {
+           when { expression { env.BRANCH_NAME == "master" } }
             steps {
                 echo " ============== start running image =================="
                 dir ('docker/helloworld') {
@@ -42,6 +47,7 @@ pipeline {
             }
         }        
                 stage("test") {
+            when { expression { env.BRANCH_NAME == "dev" || env.BRANCH_NAME == "master" } }
             steps {
                 echo " ============== start testing =================="
                 }
