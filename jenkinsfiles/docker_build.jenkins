@@ -36,8 +36,8 @@ pipeline {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
-                docker tag ddubouski/hello-world:latest ddubouski/hello-world:latest
-                docker push ddubouski/hello-world:latest
+                yes | sudo docker tag ddubouski/hello-world:latest ddubouski/hello-world:latest
+                yes | sudo docker push ddubouski/hello-world:latest
                 '''
             }
         }
