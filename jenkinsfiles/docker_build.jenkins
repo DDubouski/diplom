@@ -16,7 +16,7 @@ pipeline {
     }
     stages {
         stage ("Stop docker") {
-           when { expression { env.BRANCH_NAME == "mmain" } }
+           when { expression { env.BRANCH_NAME == "main" } }
             steps {
                 echo " ============== remove containers =================="
                 dir('docker/helloworld'){
