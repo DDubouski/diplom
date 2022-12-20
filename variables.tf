@@ -6,3 +6,7 @@ variable "aws_region" {
 variable "aws_profile" {
   description = "AWS profile"
 }
+
+variable "public_key_path" { 
+  default = "~/.ssh/id_rsa.pub"
+  }
