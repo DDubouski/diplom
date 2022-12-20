@@ -36,12 +36,12 @@ pipeline {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
+                docker tag ddubouski/hello-world:latest ddubouski/hello-world:latest
                 docker push ddubouski/hello-world:latest
                 '''
             }
         }
-
-        
+    
         stage("run docker image") {
             steps {
                 echo " ============== start running image =================="
