@@ -56,7 +56,7 @@ pipeline {
                 stage('Example') {
                     steps {
                         script { 
-                            if (env.BRANCH_NAME != 'main' && env.BRANCH_NAME != 'dev') {
+                            if (env.BRANCH_NAME != 'dev' && env.BRANCH_NAME != 'main') {
                                 echo 'This is not master or staging'
                             } else {
                                 echo 'things and stuff'
