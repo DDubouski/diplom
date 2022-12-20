@@ -46,7 +46,7 @@ pipeline {
                 }
             }
         }        
-                stage("tests") {
+                stage("test1") {
             when { expression { env.BRANCH_NAME == "prod" || env.BRANCH_NAME == "main" } }
             steps {
                 echo " ============== start testing =================="
@@ -59,7 +59,7 @@ pipeline {
                             if (env.BRANCH_NAME != 'prod' && env.BRANCH_NAME != 'main') {
                                 echo 'This is not master or staging'
                             } else {
-                                echo 'things and stuff'
+                                echo 'Master staging here'
                             }
                         }
                     }
