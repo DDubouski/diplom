@@ -4,4 +4,11 @@
 
 A simple helloworld app for docker
 
+terraform init
+terraform plan
+terraform apply -auto-approve
+
+On the cat with Jenkins. You must into instanse. And enter command "docker login"
+
+
 A simple nginx helloworld application that helps you learn docker image pulls. Runs on port :80

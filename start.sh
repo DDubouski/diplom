@@ -35,3 +35,6 @@ sudo chmod 666 /var/run/docker.sock
 # grep 'текст_который_нужно_искать' -P -R -I -l  * | xargs sed -i 's/текст_который_нужно_искать/текст_который_нужно_заменить/g'
 cd /var/lib/jenkins
 sed -i 's/<label></label>/<label>master</label>/' config.xml
+
+#add Jenkins' user role of sudo
+sudo sh -c "echo ‘jenkins ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
