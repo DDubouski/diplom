@@ -65,13 +65,7 @@ pipeline {
                     }
                 }
                 
-stage('Send Email') {
-            steps {
-            node ('main'){
-                echo 'Send Email'
-            }
-        }
-        }
+
     }
     post { 
         always { 
