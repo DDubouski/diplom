@@ -8,7 +8,7 @@ receivers:
   - name: 'mail'
     email_configs:
       - smarthost: 'smtp.gmail.com:465'
-        auth_username: 'Dveyn_d@mail.ru'
-        auth_password: "63317DveyN63317"
-        from: 'dveyn_d@mail.com'
+        auth_username: 'Dveyny@gmail.com'
+        auth_password: "oqqvihfnrnjxlsby"
+        from: 'dveyny@gmail.com'
         to: 'dveyny@gmail.com'
