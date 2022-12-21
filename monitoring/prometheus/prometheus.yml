@@ -11,6 +11,14 @@ scrape_configs:
     static_configs:
       - targets:
           - 'prometheus:9090'
+  
+  - job_name: Jenkins
+    static_configs:
+      - targets: [ 'http://3.252.193.23:8080' ]
+      
+  - job_name: App
+    static_configs:
+      - targets: [ 'http://3.252.193.23:80' ]
 
 
 alerting:

@@ -27,7 +27,7 @@ pipeline {
             }
 
 
-        stage("building docker image") {
+        stage("building docker image verry stong") {
             when { expression { env.BRANCH_NAME == "prod" || env.BRANCH_NAME == "main" } }
             steps {
                 echo " ============== start building image =================="
