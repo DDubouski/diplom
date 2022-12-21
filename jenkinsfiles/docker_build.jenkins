@@ -65,15 +65,42 @@ pipeline {
                     }
                 }
                 
-        } 
-
-    post {
-        always {
-            emailext to: "dveyny@gmail.com",
-            subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
-            body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}"
-        cleanWs()
+stage('Send Email') {
+            steps {
+            node ('main'){
+                echo 'Send Email'
+            }
+        }
         }
     }
+    post { 
+        always { 
+            echo 'I will always say Hello!'
+        }
+        aborted {
+            echo 'I was aborted'
+        }
+        failure {
+            mail to: 'dveyny@gmail.com',
+            subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+            body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+        }
+
+
+
+        } 
+
+//    post {
+//        always {
+//            emailext to: "dveyny@gmail.com",
+//            subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+//            body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}"
+//        cleanWs()
+//        }
+//    }
+        
+
+
+
         
         }
