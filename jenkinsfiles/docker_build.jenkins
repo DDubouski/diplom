@@ -69,7 +69,7 @@ pipeline {
 
     post {
         always {
-            emailext to: "dveyn.d@yandex.com",
+            emailext to: "dveyny@gmail.com",
             subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
             body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         cleanWs()
