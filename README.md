@@ -8,7 +8,8 @@ terraform init
 terraform plan
 terraform apply -auto-approve
 
-On the cat with Jenkins. You must into instanse. And enter command "docker login"
+On the cat with Jenkins. You must into instanse. And enter command "docker login", and, after that enter your credemptions from docker's site.
 
-
+Jenkins is working on port :8080
+like: http://<your-machin_ip>:8080
 A simple nginx helloworld application that helps you learn docker image pulls. Runs on port :80

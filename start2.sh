@@ -32,13 +32,3 @@ yes | sudo ufw allow 9093
 yes | sudo ufw allow 9090
 yes | sudo ufw allow 3000
 yes | sudo ufw enable
-
-yes | sudo touch /etc/prometheus/prometheus.yml
-sudo chmod 777 /etc/prometheus/prometheus.yml
-sudo echo "global:
-  scrape_interval: 15s
-scrape_configs:
-  - job_name: 'prometheus'
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['localhost:9090']" > 123.txt

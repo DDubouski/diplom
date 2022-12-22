@@ -30,9 +30,6 @@ yes | apt-cache policy docker-ce
 yes | sudo apt install docker-ce
 sudo chmod 666 /var/run/docker.sock
 
-## 
-
-# grep 'текст_который_нужно_искать' -P -R -I -l  * | xargs sed -i 's/текст_который_нужно_искать/текст_который_нужно_заменить/g'
 cd /var/lib/jenkins
 sed -i 's/<label></label>/<label>master</label>/' config.xml
 
